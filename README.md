@@ -2,7 +2,6 @@
 
 - [Node js](https://nodejs.org/en/)
 - [NPM](https://nodejs.org/)
-- Optional: [PM2](https://pm2.keymetrics.io/)
 
 ## Getting started
 
@@ -18,24 +17,36 @@ npm i
 npm run dev
 ```
 
-## Build for production
-
+## Notes
 In order to compile `typescript` code, and generate the javascript code, you need to run this command:
 
 ```bash
 npm run build
 ```
 
-After building the `middle-tier` project, you can start the project in production mode by either running this command:
+After building the project, you can start the project by either running this command:
 
 ```bash
 npm start
 ```
 
-Or:
+## Endpoints
+**GET** http://0.0.0.0:3003/auth/  
+**POST** http://0.0.0.0:3003/auth/login  
+with the folowing body (deatils are on the dao):
+````
+{
+    "username": "user2@email.com",
+    "password": "password123-2"
+}
+````
+**GET** http://0.0.0.0:3003/auth/current-user  
+with the folowing authaurisation on headers: `Bearer accessToken`  
+**POST** http://0.0.0.0:3003/auth/refresh
+````
+{
+    "refreshToken": {{refreshToken}}
+}
+````
 
-```bash
-pm2 start graphql.pm2.json
-```
-
-If you have [`pm2`](https://pm2.keymetrics.io/) already started
+ 
