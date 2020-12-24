@@ -1,0 +1,63 @@
+{
+  "name": "apollo-server",
+  "version": "0.1.0",
+  "description": "A PoC for Relevant Equity Works web portal project",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "fix:lint": "eslint . --ext .ts",
+    "prettier:format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+  },
+  "keywords": [],
+  "authors": [
+    {
+      "name": "4D SAS",
+      "email": "contact@4d.com",
+      "website": "https://www.4d.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git-ps.wakanda.io:wakanda-ps/relevant/poc.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.0.27",
+    "@types/redis": "^2.8.27",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "class-validator": "^0.12.2",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "_moduleAliases": {
+    "@config": "build/config",
+    "@resolvers": "build/resolvers",
+    "@_types": "build/types",
+    "@errors": "build/errors",
+    "@lib": "build/lib",
+    "@models": "build/models",
+    "@interfaces": "build/interfaces",
+    "@dao": "build/dao"
+  }
+}
